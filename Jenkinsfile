@@ -1,7 +1,20 @@
 pipeline {
     agent any 
     stages {
-        stage('Stage 1') {
+                stage('ls') {
+            steps {
+                sh "ls -l"
+            }
+        }
+        
+                    stage('Checkout Source') {
+            steps {
+                ws("${workspace}") {
+                    checkout scm
+                }
+            }
+        }
+        stage('print') {
             steps {
                 echo 'Hello world!' 
             }
