@@ -8,7 +8,7 @@ pipeline {
             }
         }
     stages {
-        stage('Stage 1') {
+        stage('print') {
             steps {
                 echo 'Hello world!' 
             }
